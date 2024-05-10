@@ -40,3 +40,40 @@
 .read-the-docs {
   color: #888;
 }
+
+
+/* Barre de défilement pour les navigateurs Webkit (Chrome, Safari) */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-secondaire-600;
+  border-radius: 6px;
+}
+
+
+::-ms-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-ms-scrollbar-thumb {
+  @apply bg-secondaire-600;
+  border-radius: 6px;
+}
+
+
+.mdpending {
+  /* @apply py-2  rounded px-5 inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 text-secondaire */
+
+  /* padding-top: 0.5rem; */
+  
+}
+#sidebar a.mdpending {
+  color: red;
+}

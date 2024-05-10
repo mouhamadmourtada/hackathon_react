@@ -31,6 +31,14 @@ a:hover {
   color: #535bf2;
 }
 
+.mdactive {
+  color: red;
+}
+.mdpending {
+  @apply py-2  rounded px-5 inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800  text-secondaire
+
+}
+
 body {
   margin: 0;
   display: flex;
