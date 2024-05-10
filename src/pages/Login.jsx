@@ -14,41 +14,41 @@ const Login = () => {
 
     const handleLogin = async () => {
         
-        if(!email || !password) {
-            setErreur("Veuillez remplir tous les champs");
-            return;
-        }
+        // if(!email || !password) {
+        //     setErreur("Veuillez remplir tous les champs");
+        //     return;
+        // }
 
-        // il faut faire la fetch
-        fetch('http://localhost:8000/api/login', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                email: email,
-                password,
-            }),
-        })
-        .then(response => response.json())
-        .then(data => {
-            if (data.message) {
-                setErreur(data.message);
-                return;
-            }
+        // // il faut faire la fetch
+        // fetch('http://localhost:8000/api/login', {
+        //     method: 'POST',
+        //     headers: {
+        //         'Content-Type': 'application/json',
+        //     },
+        //     body: JSON.stringify({
+        //         email: email,
+        //         password,
+        //     }),
+        // })
+        // .then(response => response.json())
+        // .then(data => {
+        //     if (data.message) {
+        //         setErreur(data.message);
+        //         return;
+        //     }
             
-            setToken(data.authorisation.token);
-            // il faut change
-            // navigate('/dashboard');
-            navigate("/", { replace: true });
+        //     setToken(data.authorisation.token);
+        //     // il faut change
+        //     navigate('/dashboard');
+        //     // navigate("/", { replace: true });
 
-        }).catch((error) => {
-            console.error('Error:', error);
-            setErreur("Une erreur s'est produite");
-        });
+        // }).catch((error) => {
+        //     console.error('Error:', error);
+        //     setErreur("Une erreur s'est produite");
+        // });
 
-        // setToken(data.jwt);
-        // navigate('/dashboard');    
+        setToken("haa");
+        navigate('/dashboard');    
     }
 
   return (
