@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import { DropdownIcon } from '../../icons'
 import * as Icons from '../../icons'
 import { Transition } from '@windmill/react-ui'
@@ -17,9 +17,10 @@ function SidebarSubmenu({ route }) {
   }
 
   return (
-    <li className="relative px-6 py-3" key={route.name}>
+    <li className="relative py-1" key={route.name}>
       <button
-        className="inline-flex items-center justify-between w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+      
+        className="inline-flex items-center justify-between w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 text-secondaire"
         onClick={handleDropdownMenuClick}
         aria-haspopup="true"
       >
@@ -39,17 +40,27 @@ function SidebarSubmenu({ route }) {
         leaveTo="opacity-0 max-h-0"
       >
         <ul
-          className="p-2 mt-2 space-y-2 overflow-hidden text-sm font-medium text-gray-500 rounded-md shadow-inner bg-gray-50 dark:text-gray-400 dark:bg-gray-900"
+          className="p-2 bg-gray-100 mt-1 border border-gray-200 border-1 mx-2 space-y-2 overflow-hidden text-sm font-medium text-gray-500 rounded-md shadow-xl bg-gray-200 "
           aria-label="submenu"
         >
           {route.routes.map((r) => (
             <li
-              className="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+              className="px-2 relative  transition-colors duration-150 hover:text-gray-800 "
               key={r.name}
             >
-              <Link className="w-full" to={r.path}>
-                {r.name}
-              </Link>
+             
+              <NavLink
+                exact
+                to={r.path}
+                
+                className={({ isActive }) => 
+                  isActive ? "py-2  rounded px-5 inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 bg-secondaire text-white hover:text-white" : "py-2  rounded px-5 inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 text-secondaire"
+                }                
+              >
+               
+                {/* <Icon className="w-5 h-5" aria-hidden="true" icon={route.icon} /> */}
+                <span className="ml-4">{r.name}</span>
+              </NavLink>
             </li>
           ))}
         </ul>

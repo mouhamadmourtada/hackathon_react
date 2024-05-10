@@ -7,39 +7,39 @@
  */
 const routes = [
   {
-    path: '/app/dashboard', // the url
+    path: '/dashboard', // the url
     icon: 'HomeIcon', // the component being exported from icons/index.js
     name: 'Dashboard', // name that appear in Sidebar
   },
   {
-    path: '/app/forms',
+    path: '/forms',
     icon: 'FormsIcon',
     name: 'Forms',
   },
   {
-    path: '/app/cards',
+    path: '/todos',
+    icon: 'FormsIcon',
+    name: 'Todos',
+  },
+  {
+    path: '/cards',
     icon: 'CardsIcon',
     name: 'Cards',
   },
   {
-    path: '/app/charts',
+    path: '/charts',
     icon: 'ChartsIcon',
     name: 'Charts',
   },
   {
-    path: '/app/buttons',
+    path: '/buttons',
     icon: 'ButtonsIcon',
     name: 'Buttons',
   },
   {
-    path: '/app/modals',
+    path: '/modals',
     icon: 'ModalsIcon',
     name: 'Modals',
-  },
-  {
-    path: '/app/tables',
-    icon: 'TablesIcon',
-    name: 'Tables',
   },
   {
     icon: 'PagesIcon',
@@ -59,15 +59,21 @@ const routes = [
         name: 'Forgot password',
       },
       {
-        path: '/app/404',
+        path: '/404',
         name: '404',
       },
       {
-        path: '/app/blank',
+        path: '/blank',
         name: 'Blank',
       },
     ],
   },
+  {
+    path: '/tables',
+    icon: 'TablesIcon',
+    name: 'Tables',
+  },
+  
 ]
 
 export default routes
