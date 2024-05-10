@@ -28,8 +28,8 @@ function Header() {
   }
 
   return (
-    <header className="z-40 py-4 bg-white shadow-bottom dark:bg-gray-800 border border-b-gray-100">
-      <div className="container flex items-center justify-between h-full px-6 mx-auto text-purple-600 dark:text-purple-300">
+    <header className="z-40 py-4 bg-white shadow-bottom  border border-b-gray-100">
+      <div className="container flex items-center justify-between h-full px-6 mx-auto text-purple-600 ">
         {/* <!-- Mobile hamburger --> */}
         <button
           className="p-1 mr-5 -ml-1 rounded-md lg:hidden focus:outline-none focus:shadow-outline-purple"
@@ -78,7 +78,7 @@ function Header() {
               {/* <!-- Notification badge --> */}
               <span
                 aria-hidden="true"
-                className="absolute top-0 right-0 inline-block w-3 h-3 transform translate-x-1 -translate-y-1 bg-red-600 border-2 border-white rounded-full dark:border-gray-800"
+                className="absolute top-0 right-0 inline-block w-3 h-3 transform translate-x-1 -translate-y-1 bg-red-600 border-2 border-white rounded-full "
               ></span>
             </button>
 

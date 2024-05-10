@@ -33,3 +33,9 @@ export const useSidebarContexte = () => {
   }
   return context
 }
+
+// CloseButton
+// Image (avec props le type, est-ce que ce sera une image arrondi etc....)
+// ProgressBar
+// IconButton
+// SearchInput

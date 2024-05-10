@@ -11,9 +11,11 @@
   },
   "dependencies": {
     "@windmill/react-ui": "^0.6.0",
+    "antd": "^5.17.0",
     "axios": "^1.6.8",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-hook-form": "^7.51.4",
     "react-router-dom": "^6.23.0",
     "vite-plugin-svgr": "^4.2.0"
   },
