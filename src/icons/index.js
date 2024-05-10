@@ -56,6 +56,8 @@ import OutlineCogIcon from './outlineCog.svg?react'
 import OutlineLogoutIcon from './outlineLogout.svg?react'
 import ButtonsIcon from './buttons.svg?react'
 import BellIcon from './bell.svg?react'
+import AddIcon from './add.svg?react'
+import ShowIcon from './show.svg?react'
 
 export {
   ButtonsIcon,
@@ -86,4 +88,6 @@ export {
   OutlinePersonIcon,
   OutlineCogIcon,
   OutlineLogoutIcon,
+  AddIcon,
+  ShowIcon
 }

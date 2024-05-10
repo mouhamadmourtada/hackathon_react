@@ -20,13 +20,13 @@ function Layout({children}) {
 
   return (
     <div
-      className={`flex h-screen bg-gray-50 dark:bg-gray-900 ${isSidebarOpen && 'overflow-hidden'}`}
+      className={`flex h-screen bg-gray-50 ${isSidebarOpen && 'overflow-hidden'}`}
     >
       <Sidebar />
 
-      <div className="flex flex-col flex-1 w-full">
+      <div className="flex flex-col flex-1 w-full bg-gray-100">
         <Header />
-        <Main>
+        <Main >
           {children}
         </Main>
       </div>
