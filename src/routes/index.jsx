@@ -12,6 +12,7 @@ import {Edit as EditTodo} from "../pages/todo/Edit";
 import { Show as ShowTodo } from "../pages/todo/Show";
 import {Create as CreateTodo} from "../pages/todo/Create";
 import Register from "../auth/Register";
+import VendreUnProduit from "../pages/VendreUnProduit";
 
 const Routes = () => {
   const { token } = useAuth();
@@ -39,7 +40,7 @@ const Routes = () => {
       children: [
         {
           path: "",
-          element: <Dashboard />,
+          element: <VendreUnProduit />,
         },
         {
             path: "dashboard",
