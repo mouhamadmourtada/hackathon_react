@@ -29,7 +29,7 @@ const Table = ({data, columns, actions}) => {
                                     
                                 ))}
                                 
-                                <ActionComponent actions = {actions} />
+                                <ActionComponent actions = {actions} id = {row["id"]} />
                             </tr>
                         ))}
                     </tbody>

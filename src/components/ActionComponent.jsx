@@ -1,8 +1,8 @@
 import React from 'react';
 
-const ActionComponent = ({actions}) => {
+const ActionComponent = ({actions, id}) => {
    
-
+    // console.log(id)
     return (
         <td className='border-b flex justify-center items-center space-x-2 text-sm px-3 py-3 border-l '>
             <div class="px-4 border-2 border-gray-200 flex justify-center rounded items-center space-x-2 text-sm max-w-20  shadow-xl p-0.5 bg-gray-100">
@@ -11,11 +11,11 @@ const ActionComponent = ({actions}) => {
                     // le nom du composant est passé en parametre est-ce que je peux l'utiliser
                     switch (act.name) {
                         case "edit":
-                            return <ActionEdit onClick={ ()=> act.function(1)}/>
+                            return <ActionEdit onClick={ ()=> act.function(id)}/>
                         case "view":
-                            return <ActionView onClick={()=> act.function(1)}/>
+                            return <ActionView onClick={()=> act.function(id)}/>
                         case "delete":
-                            return <ActionDelete onClick={()=> act.function(1)}/>
+                            return <ActionDelete onClick={()=> act.function(id)}/>
                     
                     }
                     // return <ActionView handleClick={act.function}/>
