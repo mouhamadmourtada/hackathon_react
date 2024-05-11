@@ -6,15 +6,18 @@ import BreadCrumb from '../../components/BreadCrumb';
 import IndiquePage from '../../components/IndiquePage';
 import AddButton from '../../components/AddButton';
 import useAxios from '../../Hook/useAxios';
+import Alert from '../../components/Alert';
+import EmptyData from '../../components/EmptyData';
+import Loader from '../../components/Loader';
 
 const ListeTodos = () => {
 
     const navigate = useNavigate()
 
     const {responseAxios, error, loading, fetchData } = useAxios({
-        url : 'localhost:8000/api/todos',
+        url : 'http://localhost:8000/api/todos',
         method : "GET",
-        body : null,
+        // body : null,
         headers : {
             "Content-type" : "application/json"
         }
@@ -22,17 +25,48 @@ const ListeTodos = () => {
     }
     )
 
-    // useEffect(() => {
-    //     fetchData()
-    // }, [])
+    useEffect(() => {
+        if(responseAxios){
+            setDonnees(responseAxios.todos)
+        }
+    }, [responseAxios])
 
-    const columns = [
-        "id",
-        "title",
-        "completed",
-        "description"
-    ]
+    const [donnees, setDonnees] = React.useState([])
+    useEffect( () => {
+        fetchData()
+        
+    }, [])
+
     
+    const columns2 = [
+
+        {
+            id : 1,
+            title : "id",
+            attribute : "id",
+            type : "int"
+        },{
+            id : 2,
+            title : "title",
+            attribute : "title",
+            type : "string"
+        },{
+            id : 3,
+            title : "description",
+            attribute : "description",
+            type : "string"
+        },{
+            id : 4,
+            title : "Date créaton",
+            attribute : "created_at",
+            type : "Date"
+        },{
+            id : 5,
+            title : "date modification",
+            attribute : "updated_at",
+            type : "Date"
+        }
+    ]
     
     const data = [
         {
@@ -88,11 +122,6 @@ const ListeTodos = () => {
             lien : "/todos",
             icon : "HomeIcon"
         }
-        // ,{
-        //     label : "edit",
-        //     lien : "/todos/edit/1",
-        //     icon : "EditIcon"
-        // }
     ]
 
     const goToAddTodo = () => {
@@ -107,7 +136,18 @@ const ListeTodos = () => {
                 <IndiquePage className={"mt-3"}>Liste des todos</IndiquePage>
                 <AddButton onClick={goToAddTodo} >Nouveau Todo</AddButton>
             </div>
-            <Table columns = {columns} data = {data} actions={actions}/>
+            {
+                loading && <Loader/>            }
+            {
+                error && <Alert type={"danger"} text={"Problème au niveau du serveur veuillez vous reconnecter plus tard !"}/>
+            }
+            {
+                !loading && donnees.length !== 0 ?
+
+                <Table columns = {columns2} data = {donnees} actions={actions}/>:
+                <EmptyData >pas de todos </EmptyData>
+
+            }
            
 
            
