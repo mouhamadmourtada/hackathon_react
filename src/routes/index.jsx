@@ -11,6 +11,9 @@ import ListeTodos from "../pages/todo/index";
 import {Edit as EditTodo} from "../pages/todo/Edit";
 import { Show as ShowTodo } from "../pages/todo/Show";
 import {Create as CreateTodo} from "../pages/todo/Create";
+
+import LandingPage from "../pages/LandingPage";
+
 import Register from "../auth/Register";
 
 const Routes = () => {
@@ -26,12 +29,16 @@ const Routes = () => {
       path: "/about-us",
       element: <div>About Us</div>,
     },
+    {
+      path : "/land",
+      element : <LandingPage/>
+    }
   ];
 
   // Define routes accessible only to authenticated users
   const routesForAuthenticatedOnly = [
     {
-      path: "/",
+      path: "/app/",
       element: 
       <Layout>
         <ProtectedRoute />
@@ -48,6 +55,10 @@ const Routes = () => {
         {
           path: "profile",
           element: <div>User Profile</div>,
+        },
+        {
+          path: "landingPage",
+          element: <div>LandingPage</div>,
         },
         {
           path: "todos",
