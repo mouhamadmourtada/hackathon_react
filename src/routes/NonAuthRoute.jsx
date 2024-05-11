@@ -4,7 +4,7 @@ import {useAuth} from "../provider/authProvider";
 export const NonAuthRoute = () => {
     const { token } = useAuth();
     if (token) {
-      return <Navigate to="/dashboard" />;
+      return <Navigate to="/login" />;
     }
   
     return <Outlet />;
