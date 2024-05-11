@@ -11,7 +11,10 @@ import ListeTodos from "../pages/todo/index";
 import {Edit as EditTodo} from "../pages/todo/Edit";
 import { Show as ShowTodo } from "../pages/todo/Show";
 import {Create as CreateTodo} from "../pages/todo/Create";
+
 import LandingPage from "../pages/LandingPage";
+
+import Register from "../auth/Register";
 
 const Routes = () => {
   const { token } = useAuth();
@@ -105,7 +108,11 @@ const Routes = () => {
         {
             path: "/login",
             element: <Login />,
-          },
+        },
+        {
+            path: "/register",
+            element: <Register />,
+        },
       ]
     },
   ];

@@ -7,6 +7,9 @@ export default {
   // je veux définir une variable utilisable dans mon fichier tailwind
   theme : {
     extend : {
+      backgroundImage: {
+        'registerBackground': "url('/images/registerImage1.jpg')",
+      },
       colors : {
         'bleu_clair' : '#E9F1FA',
         'bleu_fonce' : '#00ABE4',
@@ -18,6 +21,11 @@ export default {
         "primaire" : '#E9F1FA',
         "secondaire" : "#00ABE4",
         "tertiaire" : "#F2F2F2",
+
+        'primary':'#064B4E',
+        'secondary':"#9DBC98", 
+        'tertiary':"#9DBC98", 
+        'accent':'#FAF4DF',
       }
     }
   },
