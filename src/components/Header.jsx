@@ -11,6 +11,7 @@ import {
   OutlineLogoutIcon,
 } from '../icons'
 import { Avatar, Badge, Input, Dropdown, DropdownItem, WindmillContext } from '@windmill/react-ui'
+import {SearchInput} from './SearchInput'
 
 function Header() {
   const { mode, toggleMode } = useContext(WindmillContext)
@@ -28,7 +29,7 @@ function Header() {
   }
 
   return (
-    <header className="z-40 py-4 bg-white shadow-bottom  border border-b-gray-100">
+    <header className="z-40 py-1 bg-white shadow-bottom  border border-b-gray-100">
       <div className="container flex items-center justify-between h-full px-6 mx-auto text-purple-600 ">
         {/* <!-- Mobile hamburger --> */}
         <button
@@ -39,7 +40,9 @@ function Header() {
           <MenuIcon className="w-6 h-6" aria-hidden="true" />
         </button>
         {/* <!-- Search input --> */}
-        <div className="flex justify-center flex-1 lg:mr-32">
+
+        <SearchInput/>
+        {/* <div className="flex justify-center flex-1 lg:mr-32">
           <div className="relative w-full max-w-xl mr-6 focus-within:text-purple-500">
             <div className="absolute inset-y-0 flex items-center pl-2">
               <SearchIcon className="w-4 h-4" aria-hidden="true" />
@@ -50,7 +53,7 @@ function Header() {
               aria-label="Search"
             />
           </div>
-        </div>
+        </div> */}
         <ul className="flex items-center flex-shrink-0 space-x-6">
           {/* <!-- Theme toggler --> */}
           <li className="flex">

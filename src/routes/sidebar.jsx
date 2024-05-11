@@ -12,67 +12,79 @@ const routes = [
     name: 'Dashboard', // name that appear in Sidebar
   },
   {
-    path: '/forms',
-    icon: 'FormsIcon',
-    name: 'Forms',
+    path: '/store',
+    icon: 'MarketIcon',
+    name: 'Store',
   },
+  {
+    path: '/products',
+    icon: 'ProductIcon',
+    name: 'Produits',
+  },
+  {
+    path: '/orders',
+    icon: 'OrderIcon',
+    name: 'Commandes',
+  },
+
   {
     path: '/todos',
-    icon: 'FormsIcon',
-    name: 'Todos',
+    icon: 'CartIcon',
+    name: 'Panier',
   },
-  {
-    path: '/cards',
-    icon: 'CardsIcon',
-    name: 'Cards',
-  },
-  {
-    path: '/charts',
-    icon: 'ChartsIcon',
-    name: 'Charts',
-  },
-  {
-    path: '/buttons',
-    icon: 'ButtonsIcon',
-    name: 'Buttons',
-  },
-  {
-    path: '/modals',
-    icon: 'ModalsIcon',
-    name: 'Modals',
-  },
-  {
-    icon: 'PagesIcon',
-    name: 'Pages',
-    routes: [
-      // submenu
-      {
-        path: '/login',
-        name: 'Login',
-      },
-      {
-        path: '/create-account',
-        name: 'Create account',
-      },
-      {
-        path: '/forgot-password',
-        name: 'Forgot password',
-      },
-      {
-        path: '/404',
-        name: '404',
-      },
-      {
-        path: '/blank',
-        name: 'Blank',
-      },
-    ],
-  },
-  {
-    path: '/tables',
-    icon: 'TablesIcon',
-    name: 'Tables',
-  },
+
+  // {
+  //   path: '/cards',
+  //   icon: 'CardsIcon',
+  //   name: 'Cards',
+  // },
+  // {
+  //   path: '/charts',
+  //   icon: 'ChartsIcon',
+  //   name: 'Charts',
+  // },
+  // {
+  //   path: '/buttons',
+  //   icon: 'ButtonsIcon',
+  //   name: 'Buttons',
+  // },
+  // {
+  //   path: '/modals',
+  //   icon: 'ModalsIcon',
+  //   name: 'Modals',
+  // },
+  // {
+  //   icon: 'PagesIcon',
+  //   name: 'Pages',
+  //   routes: [
+  //     // submenu
+  //     {
+  //       path: '/login',
+  //       name: 'Login',
+  //     },
+  //     {
+  //       path: '/create-account',
+  //       name: 'Create account',
+  //     },
+  //     {
+  //       path: '/forgot-password',
+  //       name: 'Forgot password',
+  //     },
+  //     {
+  //       path: '/404',
+  //       name: '404',
+  //     },
+  //     {
+  //       path: '/blank',
+  //       name: 'Blank',
+  //     },
+  //   ],
+  // },
+  // {
+  //   path: '/tables',
+  //   icon: 'TablesIcon',
+  //   name: 'Tables',
+  // },
   
 ]
 

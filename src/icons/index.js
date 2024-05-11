@@ -58,6 +58,9 @@ import ButtonsIcon from './buttons.svg?react'
 import BellIcon from './bell.svg?react'
 import AddIcon from './add.svg?react'
 import ShowIcon from './show.svg?react'
+import MarketIcon from './market.svg?react'
+import ProductIcon from './product.svg?react'
+import OrderIcon from './order.svg?react'
 
 export {
   ButtonsIcon,
@@ -89,5 +92,8 @@ export {
   OutlineCogIcon,
   OutlineLogoutIcon,
   AddIcon,
-  ShowIcon
+  ShowIcon,
+  MarketIcon,
+  ProductIcon,
+  OrderIcon
 }
