@@ -17,6 +17,7 @@ function SidebarContent() {
     <div className="py-4 text-gray-500 ">
       
       <Logo/>
+      
       <ul className="mt-6">
         {routes.map((route) =>
           route.routes ? (
