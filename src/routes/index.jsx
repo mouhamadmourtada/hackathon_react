@@ -15,8 +15,7 @@ import {Create as CreateTodo} from "../pages/todo/Create";
 import LandingPage from "../pages/LandingPage";
 
 import Register from "../auth/Register";
-import VendreUnProduit from "../pages/VendreUnProduit";
-
+import ListerProduits from "../pages/ListerProduits";
 const Routes = () => {
   const { token } = useAuth();
 
@@ -47,7 +46,7 @@ const Routes = () => {
       children: [
         {
           path: "",
-          element: <VendreUnProduit />,
+          element: <ListerProduits />,
         },
         {
             path: "dashboard",

@@ -3,7 +3,7 @@ import { FaCartShopping } from "react-icons/fa6";
 
 import Button from "./button";
 
-export default function ProductCard({title,description,price,vendeur}) {
+export default function ProductCard({title,description,price,vendeur, button_libelle, button_onClick}) {
     return (
         <div className={`w-[200px] border bg-white gap-1  min-h-[200px] p-2 flex flex-col rounded-2xl hover:-translate-y-2 hover:shadow-md transition-all cursor-pointer`}>
             {/* Product Image */}
@@ -23,7 +23,7 @@ export default function ProductCard({title,description,price,vendeur}) {
                 <p className="font-bold">{price} Fcfa</p>
             </div>
             
-            <Button type="primary" text={"Ajouter au panier"} customStyle={"text-xs "} icon={<FaCartShopping color="white"/>} />   
+            <Button type="primary" text={button_libelle} customStyle={"text-xs "} icon={<FaCartShopping color="white"/>} onClick={button_onClick}/>   
 
            
         </div>
