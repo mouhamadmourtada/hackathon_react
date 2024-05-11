@@ -14,7 +14,11 @@ const BreadCrumb = ({links}) => {
                         <li key={index} className="hover:bg-primaire hover:text-secondaire py-3 px-3">
                             <div class="flex items-center">
                                 <MdIcon className="w-4 h-4 mx-2" aria-hidden="true" icon={link.icon} />
-                                <Link to={link.lien} class="text-sm font-medium text-gray-700 hover:text-inherit ">{link.label}</Link>
+                                { index != links.length ?
+                                    <Link to={link.lien} class="text-sm font-medium text-gray-700 hover:text-inherit ">{link.label}</Link> : 
+                                
+                                    <span class="text-sm font-medium text-gray-700 hover:text-inherit ">{link.label}</span>
+                                }
 
                                 {index != links.length - 1 &&
                                     <Slash className="mx-2"></Slash>
