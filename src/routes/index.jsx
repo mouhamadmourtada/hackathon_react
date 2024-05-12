@@ -69,11 +69,12 @@ const Routes = () => {
           path: "product/:id",
           element: <div>Edit</div>,
         },
-
         {
-          path: "panier",
-          element: <Panier />,
+            path: "panier",
+            element: <Panier />,
         },
+        
+
         {
           path: "profile",
           element: <div>User Profile</div>,
