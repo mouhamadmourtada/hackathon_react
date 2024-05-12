@@ -1,7 +1,13 @@
-//Image (avec props le type, est-ce que ce sera une image arrondi etc....)
 
-
-export default function  Image(){
-
-
+function Image({ width, height, rounded, src, className = {} }) {
+    return (
+        <div className={`avatar ${className}`}>
+            <div className={`w-${width}  h-${height}  ${rounded ? 'rounded-xl' : ''}`}>
+                <img src={src} alt="image" />
+            </div>
+        </div>
+    );
 }
+
+
+export default Image;

@@ -14,6 +14,7 @@ export default {
         'bleu_clair' : '#E9F1FA',
         'bleu_fonce' : '#00ABE4',
         'myWhite' : '#FFFFFF',
+
         'jay_primary':'#064B4E',
          'jay_secondary':"#9DBC98", 
          'jay_tertiary':"#9DBC98", 

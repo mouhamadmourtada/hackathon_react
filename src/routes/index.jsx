@@ -4,6 +4,7 @@ import { ProtectedRoute } from "./ProtectedRoute";
 // import Login from "../pages/Login";
 import Login from "../auth/Login"
 import Dashboard from "../pages/Dashboard";
+import Product from "../pages/Product";
 import { Page404 } from "../pages/Page404";
 import { NonAuthRoute } from "./NonAuthRoute";
 import Layout from "../layout/Layout";
@@ -11,6 +12,7 @@ import ListeTodos from "../pages/todo/index";
 import {Edit as EditTodo} from "../pages/todo/Edit";
 import { Show as ShowTodo } from "../pages/todo/Show";
 import {Create as CreateTodo} from "../pages/todo/Create";
+import Store from "../pages/Store";
 
 import LandingPage from "../pages/LandingPage";
 
@@ -55,6 +57,22 @@ const Routes = () => {
             element: <Dashboard />,
         },
         {
+          path: "store",
+          element: <Store />,
+        },
+        {
+          path: "product",
+          element: <Product/>,
+          
+        },
+        {
+          path: "product:id",
+          element: <div>Edit</div>,
+          
+        },
+
+        {
+
             path: "panier",
             element: <Panier />,
         },
@@ -67,6 +85,7 @@ const Routes = () => {
           element: <div>LandingPage</div>,
         },
         {
+
           path: "todos",
           element: <><Outlet/></>,
           children: [

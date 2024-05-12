@@ -12,7 +12,7 @@ function App() {
   <SidebarProvider>
       <div>
         <Routes />
-
+        
       </div>
       </SidebarProvider>
    </AuthProvider>

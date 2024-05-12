@@ -17,36 +17,38 @@ function SidebarContent() {
     <div className="py-4 text-gray-500 ">
       
       <Logo/>
+
+      
       <ul className="mt-6">
         {routes.map((route) =>
           route.routes ? (
             <SidebarSubmenu route={route} key={route.name} />
           ) : (
-            <li className="relative py-1" key={route.name}>
+            <li className="relative py-1  hover:bg-slate-10" key={route.name}>
               <NavLink
                 exact
                 to={route.path}
                 
                 className={({ isActive }) => 
-                  isActive ? "py-2  rounded px-5 inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 bg-secondaire text-white hover:text-white" : "py-2  rounded px-5 inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 text-secondaire"
+                  isActive ? "py-3  rounded px-5 inline-flex items-center w-full text-xm font-semibold transition-colors duration-150 bg-primary text-white hover:text-white" : "py-3  rounded px-5 inline-flex items-center w-full text-xm font-semibold transition-colors duration-150 hover:text-secondary text-primary"
                 }                
               >
                
-                <MdIcon className="w-5 h-5" aria-hidden="true" icon={route.icon} />
+                <MdIcon className="w-6 h-6" aria-hidden="true" icon={route.icon} />
                 <span className="ml-4">{route.name}</span>
               </NavLink>
             </li>
           )
         )}
       </ul>
-      <div className="px-6 my-6">
+      {/* <div className="px-6 my-6">
         <Button>
           Create account
           <span className="ml-2" aria-hidden="true">
             +
           </span>
         </Button>
-      </div>
+      </div> */}
     </div>
   )
 }

@@ -2,9 +2,9 @@ import React from 'react';
 
 const Logo = () => {
     return (
-        <div>
-            <a className="ml-6 text-lg font-bold text-gray-800 " href="#">
-                Windmill
+        <div className="my-6">
+            <a className="ml-6  text-primary  text-lg font-bold " href="#">
+                Lamb Alimentaire
             </a>
         </div>
     );
