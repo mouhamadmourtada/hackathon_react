@@ -21,6 +21,7 @@ import LandingPage from "../pages/LandingPage";
 import Register from "../auth/Register";
 import VendreUnProduit from "../pages/VendreUnProduit";
 import Panier from "../pages/Panier";
+import Rappels from "../pages/Rappel";
 
 const Routes = () => {
   const { token } = useAuth();
@@ -70,6 +71,10 @@ const Routes = () => {
         {
           path: "store",
           element: <Store />,
+        },
+        {
+          path: "rappels",
+          element : <Rappels />,
         },
         {
           path: "product",
