@@ -36,7 +36,7 @@ export default function Panier() {
             />
           ))}
         </div>
-        <div className="w-3/12 border rounded bg-white mt-4 p-4 h-fit flex flex-col">
+        <div className="w-3/12 border rounded-2xl bg-primary text-accent mt-4 p-4 h-fit flex flex-col">
           <h2 className="text-xl mb-4">Commande</h2>
           <div className="flex flex-col gap-2">
             {selectedProducts.map((product) => (
@@ -47,8 +47,8 @@ export default function Panier() {
             ))}
           </div>
           <hr />
-            <p className="self-end my-4 text-2xl text-primary">{total} FCFA</p> {/* Afficher le total */}
-          <Button text={"Commander"} type={"primary"} onClick={()=>{alert(JSON.stringify(selectedProducts))}}/>
+            <p className="self-end my-4 text-2xl text-accent">{total} FCFA</p> {/* Afficher le total */}
+          <Button text={"Commander"} type={"secondary"} onClick={()=>{alert(JSON.stringify(selectedProducts))}}/>
         </div>
       </div>
     </>
