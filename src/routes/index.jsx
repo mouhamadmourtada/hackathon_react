@@ -75,29 +75,33 @@ const Routes = () => {
         {
           path: "",
           element: <Dashboard />,
-      },
+        },
         {
           path: "store",
           element: <Store />,
         },
         {
-
           path: "orders",
-          element: <div> <Outlet/></div>,
+          element: (
+            <div>
+              {" "}
+              <Outlet />
+            </div>
+          ),
           children: [
             {
-              path:"",
-              element:<Orders/>
+              path: "",
+              element: <Orders />,
             },
             {
-              path:"details/",
-              element:<Details/>
-            }
+              path: "details/",
+              element: <Details />,
+            },
           ],
-
+        },
+        {
           path: "rappels",
-          element : <Rappels />,
-
+          element: <Rappels />,
         },
         {
           path: "product",
@@ -108,10 +112,9 @@ const Routes = () => {
           element: <div>Edit</div>,
         },
         {
-            path: "panier",
-            element: <Panier />,
+          path: "panier",
+          element: <Panier />,
         },
-        
 
         {
           path: "profile",
