@@ -1,10 +1,16 @@
 import React from "react";
 import { useAuth } from "../provider/authProvider";
-import Layout from "../layout/Layout";
-import LambForm from "../components/LambForm";
+import "react-responsive-carousel/lib/styles/carousel.min.css"; 
+import { Carousel } from 'react-responsive-carousel';
 import Navbar from "../components/Navbar";
 import Button from "../components/button";
 import ProductCard from "../components/productCard";
+import { FaBowlFood } from "react-icons/fa6";
+import { FaHandHoldingHeart } from "react-icons/fa";
+import { GrContact } from "react-icons/gr";
+import LambForm from "../components/LambForm";
+
+
 
 //Exemple de links
 const links = [
@@ -51,8 +57,16 @@ const produits = [
     vendeur_id: "vend789"
   }
 ];
+//fields
+const fields = [
+  { type: "Input", name: "Prénom", defaultValue: "",placeholder:"Prenom ",required: true },
+  { type: "Input", name: "Nom", defaultValue: "",placeholder:"Nom ",required: true },
+  { type: "Input", name: "Adresse", defaultValue: "",placeholder:"Adresse ",required: true },  
+];
 const LandingPage = () => {
-
+  const onSubmit = (data) =>{
+    console.log(data);
+  }
 
   return (
     // il faut mettre des bordure rouge très claire
@@ -67,7 +81,7 @@ const LandingPage = () => {
           </p>
           <span className="text-lg text-jay_accent ">Chaque achat que vous faites aide à réduire le gaspillage <br /> et soutient nos communautés locales.</span>
           <div className="w-1/2">
-            <Button type="secondary" text={"Acheter Maintenant"} customStyle={"text-md"} />
+            <Button type="secondary" text={"Commencer à Acheter"} customStyle={"text-md"} />
           </div>
         </div>
 
@@ -85,13 +99,17 @@ const LandingPage = () => {
       </div>
       {/* Products Section */}
 
-      <div className=" bg-[#f3f4f5]  flex flex-col px-8 py-8 justify-center gap-8">
+      <div className=" bg-[#f3f4f5]  flex flex-col px-8 py-12 justify-center gap-8">
 
-        <p className=" text-4xl font-bold text-jay_primary ">
-          Nos produits
+        <p className=" text-4xl font-bold flex items-center gap-2 text-jay_primary ">
+          <span>
+            Nos produits
+            </span>
+          <FaBowlFood  />
+
         </p>
 
-        <div className="flex justify-center gap-4">
+        <div className="flex justify-center gap-24">
           {produits.map((produit, index) => (
             <ProductCard
               key={index}
@@ -109,12 +127,65 @@ const LandingPage = () => {
         </div>
 
       </div>
+
       {/* Sensibilisation Section */}
+
+      <div className=" bg-[#fff]  flex flex-col px-8 py-12 justify-center gap-8">
+
+      <p className=" text-4xl font-bold flex items-center gap-2 text-jay_primary ">
+          <span>
+            Sensibilisation
+            </span>
+          <FaHandHoldingHeart  />
+
+        </p>
+
+        <div className="flex items-center justify-between  ">
+          <p className="text-5xl ">
+            Au niveau mondial, <span className="font-bold">43%</span>  à peine des fruits et légumes produits sont consommés. <br/> Les <span className="font-bold">57%</span> restants sont gaspillés!
+            <span className="text-gray text-xs block py-4 italic">Source: FAO, 31 oct. 2012</span>
+          </p>
+          <img src="/images/analytics.gif" alt="Statistiques" srcset="" width={400} height={"auto"} />
             
+        </div>
+
+        <div className="w-1/2 self-center flex flex-col gap-2 ">
+        <span className="text-center text-xl text-center italic text-jay_secondary">Vous voulez participer a la lutte?</span>
+          <Button type="primary" text={"Nous Rejoindre"} customStyle={"text-md"} />
+        </div>
+
+      </div>
+         {/* Contact Section */}
+
+         <div className=" bg-green-50  flex flex-col px-8 py-12 justify-center gap-8">
+
+<p className=" text-4xl font-bold flex items-center gap-2 text-jay_primary ">
+    <span>
+      Contactez nous
+      </span>
+    <GrContact />
+
+  </p>
+
+  <div className="flex items-center justify-between  ">
+    <img src="/images/agenda.gif" alt="Statistiques" srcset="" width={400} height={"auto"} />
+
+
+    <div className="w-1/2">
+
+      <LambForm fields={fields} onSubmit={onSubmit} submitText={"Enregistrer"} formTitle={"Contacts"}/>
+    </div>
+
+      
+  </div>
+
+</div>
 
 
 
-$
+
+
+        <div className="flex items-center justify-center bg-white w-full py-4 border-t shadow-md text-center text-xs font-bold">© All rights reserved,ESP 6 2024</div>
 
     </div>
   );

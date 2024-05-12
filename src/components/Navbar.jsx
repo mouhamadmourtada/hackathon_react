@@ -14,7 +14,7 @@ export default function Navbar({ links }) {
                 {links?.map((link) => {
                     return (
                         link?.type === "btn" ? <Button type="secondary" text={link?.name} customStyle={"text-xs"} /> :
-                        <a href={link?.href} className={`text-sm text-jay_accent whitespace-nowrap hover:text-bold transition-all`}>{link?.name}</a>
+                        <a href={link?.href} className={`text-sm text-jay_accent whitespace-nowrap hover:font-bold transition-all`}>{link?.name}</a>
                     )
 
                 }
