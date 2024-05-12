@@ -25,13 +25,14 @@ const links = [
     }
 ]
 
-// Create an array of 10 products
-const products = Array(14).fill({
+
+
+const products = Array.from({ length: 14 }, (v, i) => ({
+    id: i + 1,
     name: 'Diay ma',
     image: 'src/assets/images/banane.jpg',
     price: '680 Fcfa'
-});
-
+}));
 
 
 export default function Product() {
@@ -46,7 +47,7 @@ export default function Product() {
 
 
     const goToEdit = (productId) => {
-        return () => navigate(`product/${productId}`);
+        return () => navigate(`${productId}`);
     };
 
 

@@ -56,7 +56,7 @@ const Routes = () => {
           
         },
         {
-          path: "product:id",
+          path: "product/:id",
           element: <div>Edit</div>,
           
         },
