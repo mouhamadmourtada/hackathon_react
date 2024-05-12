@@ -47,7 +47,7 @@ const Routes = () => {
       </Layout>,
       children: [
         {
-          path: "",
+          path: "produits/add",
           element: <VendreUnProduit />,
         },
         {

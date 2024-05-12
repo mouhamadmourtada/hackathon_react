@@ -6,6 +6,7 @@ const Dashboard = () => {
   const { setToken } = useAuth();
 
   const handleLogout = () => {
+    localStorage.clear();
     setToken(null);
   };
 
