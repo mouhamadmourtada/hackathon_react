@@ -93,7 +93,7 @@ const Routes = () => {
               path:"details/",
               element:<Details/>
             }
-          ]
+          ],
 
           path: "rappels",
           element : <Rappels />,
