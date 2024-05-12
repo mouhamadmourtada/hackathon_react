@@ -27,7 +27,6 @@ export default function ProductCard({
       <div className=" flex flex-col">
         <p className=" font-bold">{title}</p>
         <p className="text-jay_primary text-xs ">{description}</p>
-        <p className="text-jay_primary text-xs  ">Proposé par {vendeur}</p>
         <p className="font-bold">{price} Fcfa</p>
       </div>
 
