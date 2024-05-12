@@ -17,7 +17,7 @@ const routes = [
     name: 'Store',
   },
   {
-    path: '/products',
+    path: '/product',
     icon: 'ProductIcon',
     name: 'Produits',
   },
