@@ -90,8 +90,8 @@ export default function Product() {
                     <a>
                       <img
                         className="w-52"
-                        src="src/assets/images/banane.jpg"
-                        alt="src/assets/images/banane.jpg"
+                        src="/images/banane.jpg"
+                        alt="/images/banane.jpg"
                       />
                     </a>
                     <div className="absolute top-5 bg-white right-5 z-10">
