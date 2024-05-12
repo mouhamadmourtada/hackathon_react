@@ -39,9 +39,17 @@ const Login = () => {
             }
             
             setToken(data.authorisation.token);
-            // il faut change
+            // il faut enregistrer le user dans le local storage 
+            localStorage.setItem("id", data.user.id)
+            localStorage.setItem("nom", data.user.nom)
+            localStorage.setItem("prenom", data.user.prenom)
+            localStorage.setItem("email", data.user.email)
+            localStorage.setItem("telephone", data.user.telephone)
+            localStorage.setItem("adresse", data.user.adresse)
+            
+            
             // navigate('/dashboard');
-            navigate("/", { replace: true });
+            navigate("/app/", { replace: true });
 
         }).catch((error) => {
             console.error('Error:', error);
