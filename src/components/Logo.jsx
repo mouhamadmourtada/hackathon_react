@@ -2,10 +2,9 @@ import React from 'react';
 
 const Logo = () => {
     return (
-        <div className="my-6">
-            <a className="ml-6  text-primary  text-lg font-bold " href="#">
-                Lamb Alimentaire
-            </a>
+        <div className="border-b-2  flex justify-center">
+                      <img src="/images/Yamale.png" alt="Statistiques" srcset="" width={60} height={"auto"} />
+
         </div>
     );
 }

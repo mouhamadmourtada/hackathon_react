@@ -19,6 +19,8 @@ import LandingPage from "../pages/LandingPage";
 import Register from "../auth/Register";
 import VendreUnProduit from "../pages/VendreUnProduit";
 import Panier from "../pages/Panier";
+import Orders from "../pages/commandes";
+import Details from "../pages/commandes/Details";
 
 const Routes = () => {
   const { token } = useAuth();
@@ -57,8 +59,26 @@ const Routes = () => {
             element: <Dashboard />,
         },
         {
+          path: "",
+          element: <Dashboard />,
+      },
+        {
           path: "store",
           element: <Store />,
+        },
+        {
+          path: "orders",
+          element: <div> <Outlet/></div>,
+          children: [
+            {
+              path:"",
+              element:<Orders/>
+            },
+            {
+              path:"details/",
+              element:<Details/>
+            }
+          ]
         },
         {
           path: "product",
