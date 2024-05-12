@@ -14,6 +14,12 @@ import { Show as ShowTodo } from "../pages/todo/Show";
 import {Create as CreateTodo} from "../pages/todo/Create";
 import Store from "../pages/Store";
 
+import LandingPage from "../pages/LandingPage";
+
+import Register from "../auth/Register";
+import VendreUnProduit from "../pages/VendreUnProduit";
+import Panier from "../pages/Panier";
+
 const Routes = () => {
   const { token } = useAuth();
 
@@ -27,20 +33,24 @@ const Routes = () => {
       path: "/about-us",
       element: <div>About Us</div>,
     },
+    {
+      path : "/land",
+      element : <LandingPage/>
+    }
   ];
 
   // Define routes accessible only to authenticated users
   const routesForAuthenticatedOnly = [
     {
-      path: "/",
+      path: "/app/",
       element: 
       <Layout>
         <ProtectedRoute />
       </Layout>,
       children: [
         {
-          path: "",
-          element: <Dashboard />,
+          path: "produits/add",
+          element: <VendreUnProduit />,
         },
         {
             path: "dashboard",
@@ -62,6 +72,20 @@ const Routes = () => {
         },
 
         {
+
+            path: "panier",
+            element: <Panier />,
+        },
+        {
+          path: "profile",
+          element: <div>User Profile</div>,
+        },
+        {
+          path: "landingPage",
+          element: <div>LandingPage</div>,
+        },
+        {
+
           path: "todos",
           element: <><Outlet/></>,
           children: [
@@ -109,7 +133,11 @@ const Routes = () => {
         {
             path: "/login",
             element: <Login />,
-          },
+        },
+        {
+            path: "/register",
+            element: <Register />,
+        },
       ]
     },
   ];
