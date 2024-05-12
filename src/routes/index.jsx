@@ -16,6 +16,7 @@ import LandingPage from "../pages/LandingPage";
 
 import Register from "../auth/Register";
 import VendreUnProduit from "../pages/VendreUnProduit";
+import Panier from "../pages/Panier";
 
 const Routes = () => {
   const { token } = useAuth();
@@ -52,6 +53,10 @@ const Routes = () => {
         {
             path: "dashboard",
             element: <Dashboard />,
+        },
+        {
+            path: "panier",
+            element: <Panier />,
         },
         {
           path: "profile",
