@@ -61,8 +61,12 @@ import ShowIcon from './show.svg?react'
 import MarketIcon from './market.svg?react'
 import ProductIcon from './product.svg?react'
 import OrderIcon from './order.svg?react'
+import Book from './book.svg?react'
+import Clock from './clock.svg?react'
 
 export {
+  Clock,
+  Book,
   ButtonsIcon,
   CardsIcon,
   ChartsIcon,

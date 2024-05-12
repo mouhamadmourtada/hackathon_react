@@ -32,6 +32,11 @@ const routes = [
     icon: "CartIcon",
     name: "Panier",
   },
+  {
+    path: "/app/recettes",
+    icon: "Book",
+    name: "Recettes",
+  },
 
   // {
   //   path: '/cards',
