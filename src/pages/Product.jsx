@@ -1,10 +1,10 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import Breadcrumb from '../components/BreadCrumb';
 import SearchInput from '../components/SearchInput';
 import TextButton from '../components/TextButton';
 import ReactPaginate from 'react-paginate';
-import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import useAxios from '../Hook/useAxios';
 
 
 
@@ -13,42 +13,67 @@ import { useNavigate } from 'react-router-dom';
 
 // State for the pagination
 
+
 const links = [
-    {
-        label : "Home",
-        lien : "/dashboard",
-        icon : "HomeIcon"
-    },{
-        label : "Products",
-        lien : "/product",
-        icon : "ShowIcon"
-    }
-]
-
-
+  {
+    label: "Home",
+    lien: "/dashboard",
+    icon: "HomeIcon",
+  },
+  {
+    label: "Products",
+    lien: "/product",
+    icon: "ShowIcon",
+  },
+];
 
 const products = Array.from({ length: 14 }, (v, i) => ({
-    id: i + 1,
-    name: 'Diay ma',
-    image: 'src/assets/images/banane.jpg',
-    price: '680 Fcfa'
+  id: i + 1,
+  name: "Diay ma",
+  image: "/images/banane.jpg",
+  price: "680 Fcfa",   
 }));
-
 
 export default function Product() {
 
+   
+    const {responseAxios, error, loading, fetchData } = useAxios({
+        url : 'http://localhost:8001/api/produitVentes',
+        method : "GET",
+        // body : null,
+        headers : {
+            "Content-type" : "application/json"
+        }
+    })
+
+    useEffect( () => {
+        fetchData()
+    }, []);
+
+    useEffect(() => {
+        if(responseAxios){
+            setProduits(responseAxios.data)
+            console.log(produits)   
+        }
+    }
+    , [responseAxios])
+
+
+    
     const navigate = useNavigate();
     const [currentPage, setCurrentPage] = useState(0);
     const itemsPerPage = 8;
 
-    const handlePageClick = ({ selected: selectedPage }) => {
-        setCurrentPage(selectedPage);    
-    }
-
+  const handlePageClick = ({ selected: selectedPage }) => {
+    setCurrentPage(selectedPage);
+  };
 
     const goToEdit = (productId) => {
         return () => navigate(`${productId}`);
     };
+
+    const [produits , setProduits] = useState([])
+
 
 
     
@@ -68,20 +93,21 @@ export default function Product() {
                     {/* {isDrawerOpen && <Drawer/>} */}
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-4">
-                    {products
+                    { 
+                    produits
                     .slice(currentPage * itemsPerPage, (currentPage + 1) * itemsPerPage)
                     .map((product, index) => (
                         <div key={index} className="relative  mb-5 w-full">
                             <div className="rounded-md bg-slate-50 border-gray6 border">
                                 <div className="relative p-2">
                                     <a>
-                                        <img className="w-52" src={product.image} alt={product.name}/>
+                                        <img className="w-52" src="src/assets/images/banane.jpg" alt="src/assets/images/banane.jpg"/>
                                         
                                     </a>
                                     <div className="absolute top-5 bg-white right-5 z-10">
                                         <div className="flex flex-col items-center justify-center space-y-2">
                                             <div className="relative">
-                                                <button className="btn" onClick={goToEdit(product.id)}>
+                                                <button className="btn" onClick={goToEdit(product.product_id)}>
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 16 16"><path fill="currentColor" d="M15.98 7.873c.013.03.02.064.02.098v.06a.24.24 0 0 1-.02.097C15.952 8.188 13.291 14 8 14S.047 8.188.02 8.128A.24.24 0 0 1 0 8.03v-.059c0-.034.007-.068.02-.098C.048 7.813 2.709 2 8 2s7.953 5.813 7.98 5.873m-1.37-.424a12.097 12.097 0 0 0-1.385-1.862C11.739 3.956 9.999 3 8 3c-2 0-3.74.956-5.225 2.587a12.098 12.098 0 0 0-1.701 2.414a12.095 12.095 0 0 0 1.7 2.413C4.26 12.043 6.002 13 8 13s3.74-.956 5.225-2.587A12.097 12.097 0 0 0 14.926 8c-.08-.15-.189-.343-.315-.551M8 4.75A3.253 3.253 0 0 1 11.25 8A3.254 3.254 0 0 1 8 11.25A3.253 3.253 0 0 1 4.75 8A3.252 3.252 0 0 1 8 4.75m0 1C6.76 5.75 5.75 6.76 5.75 8S6.76 10.25 8 10.25S10.25 9.24 10.25 8S9.24 5.75 8 5.75m0 1.5a.75.75 0 1 0 0 1.5a.75.75 0 0 0 0-1.5"/></svg>
                                                     {/* SVG code */}
                                                 </button>
@@ -101,7 +127,7 @@ export default function Product() {
                                 <div className="px-5 py-5 bg-slate-50 flex items-center justify-between">
                                     <a href="#" className="text-lg font-normal text-primary text-hover-primary mb-2 inline-block leading-none">{product.name}</a>
                                     <div className="leading-none mb-2">
-                                        <span className="text-base font-medium text-black">{product.price}</span>
+                                        <span className="text-base font-medium text-black">{product.prixVente}</span>
                                     </div>
                                 </div>
                             </div>

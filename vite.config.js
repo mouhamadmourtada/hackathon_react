@@ -8,3 +8,5 @@ import svgr from "vite-plugin-svgr";
 export default defineConfig({
   plugins: [svgr(), react()],
 })
+
+VITE_API_URL = "http://localhost:8001/api/"

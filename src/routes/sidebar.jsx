@@ -7,30 +7,41 @@
  */
 const routes = [
   {
+
     path: '/app/dashboard', // the url
     icon: 'HomeIcon', // the component being exported from icons/index.js
     name: 'Tableau de bord', // name that appear in Sidebar
-  },
-  {
-    path: '/app/store',
-    icon: 'MarketIcon',
-    name: 'Store',
-  },
-  {
-    path: '/app/product',
-    icon: 'ProductIcon',
-    name: 'Produits',
-  },
-  {
-    path: '/app/orders',
-    icon: 'OrderIcon',
-    name: 'Commandes',
-  },
 
+  },
   {
-    path: '/app/panier',
-    icon: 'CartIcon',
-    name: 'Panier',
+    path: "/app/store",
+    icon: "MarketIcon",
+    name: "Store",
+  },
+  {
+    path: "/app/product",
+    icon: "ProductIcon",
+    name: "Mes annonces",
+  },
+  {
+    path: "/app/orders",
+    icon: "OrderIcon",
+    name: "Commandes",
+  },
+  {
+    path: '/app/rappels',
+    icon: 'ProductIcon',
+    name: 'Rappels',  
+  },
+  {
+    path: "/app/panier",
+    icon: "CartIcon",
+    name: "Panier",
+  },
+  {
+    path: "/app/recettes",
+    icon: "Book",
+    name: "Recettes",
   },
 
   // {
@@ -85,7 +96,6 @@ const routes = [
   //   icon: 'TablesIcon',
   //   name: 'Tables',
   // },
-  
-]
+];
 
-export default routes
+export default routes;
