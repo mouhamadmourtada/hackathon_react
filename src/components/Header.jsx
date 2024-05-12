@@ -12,10 +12,14 @@ import {
 } from '../icons'
 import { Avatar, Badge, Input, Dropdown, DropdownItem, WindmillContext } from '@windmill/react-ui'
 import SearchInput from './SearchInput'
+import { useAuth } from '../provider/authProvider'
 
 function Header() {
   const { mode, toggleMode } = useContext(WindmillContext)
   const { toggleSidebar } = useContext(SidebarContext)
+
+  const { setToken } = useAuth();
+
 
   const [isNotificationsMenuOpen, setIsNotificationsMenuOpen] = useState(false)
   const [isProfileMenuOpen, setIsProfileMenuOpen] = useState(false)
@@ -27,6 +31,12 @@ function Header() {
   function handleProfileClick() {
     setIsProfileMenuOpen(!isProfileMenuOpen)
   }
+
+  const handleLogout = () => {
+    localStorage.clear();
+    setToken(null);
+  };
+
 
   return (
     <header className="z-40 py-2 bg-slate-50 shadow-bottom">
@@ -42,6 +52,7 @@ function Header() {
         {/* <!-- Search input --> */}
 
         <SearchInput  placeholder='Search ...'  onChange={()=> null } value=''  />
+
         {/* <div className="flex justify-center flex-1 lg:mr-32">
           <div className="relative w-full max-w-xl mr-6 focus-within:text-purple-500">
             <div className="absolute inset-y-0 flex items-center pl-2">
@@ -95,12 +106,12 @@ function Header() {
               onClose={() => setIsNotificationsMenuOpen(false)}
             >
               <DropdownItem tag="a" href="#" className="justify-between">
-                <span className='text-primary mr-4'>Messages</span>
-                <Badge  type="danger"  className="text-primary py-1">13</Badge>
+                <span className='text-jay_primary mr-4'>Messages</span>
+                <Badge  type="danger"  className="text-jay_primary py-1">13</Badge>
               </DropdownItem>
               <DropdownItem tag="a" href="#" className="justify-between">
-                <span className='text-primary p-1'>Sales</span>
-                <Badge type="danger" className='text-primary p-1'>2</Badge>
+                <span className='text-jay_primary p-1'>Ventes</span>
+                <Badge type="danger" className='text-jay_primary p-1'>2</Badge>
               </DropdownItem>
               <DropdownItem onClick={() => alert('Alerts!')}>
                 <span>Alerts</span>
@@ -116,7 +127,7 @@ function Header() {
               aria-haspopup="true"
             >
               <Avatar
-                className="align-middle max-w-20 "
+                className="align-middle  max-w-20 bg-white"
                 src="https://images.unsplash.com/photo-1502378735452-bc7d86632805?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=200&fit=max&s=aa3a807e1bbdfd4364d1f449eaa96d82"
                 alt=""
                 aria-hidden="true"
@@ -129,15 +140,15 @@ function Header() {
             >
               <DropdownItem tag="a" href="#">
                 <OutlinePersonIcon className="w-4 h-4 mr-3" aria-hidden="true" />
-                <span>Profile</span>
+                <span>Profil</span>
               </DropdownItem>
               <DropdownItem tag="a" href="#">
                 <OutlineCogIcon className="w-4 h-4 mr-3" aria-hidden="true" />
-                <span>Settings</span>
+                <span>Parametres</span>
               </DropdownItem>
-              <DropdownItem onClick={() => alert('Log out!')}>
+              <DropdownItem onClick={handleLogout}>
                 <OutlineLogoutIcon className="w-4 h-4 mr-3" aria-hidden="true" />
-                <span>Log out</span>
+                <span>Deconnexion</span>
               </DropdownItem>
             </Dropdown>
           </li>

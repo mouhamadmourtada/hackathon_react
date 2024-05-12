@@ -21,6 +21,10 @@ import LandingPage from "../pages/LandingPage";
 import Register from "../auth/Register";
 import VendreUnProduit from "../pages/VendreUnProduit";
 import Panier from "../pages/Panier";
+
+import Orders from "../pages/commandes";
+import Details from "../pages/commandes/Details";
+
 import Rappels from "../pages/Rappel";
 
 const Routes = () => {
@@ -69,12 +73,31 @@ const Routes = () => {
           element: <Dashboard />,
         },
         {
+          path: "",
+          element: <Dashboard />,
+      },
+        {
           path: "store",
           element: <Store />,
         },
         {
+
+          path: "orders",
+          element: <div> <Outlet/></div>,
+          children: [
+            {
+              path:"",
+              element:<Orders/>
+            },
+            {
+              path:"details/",
+              element:<Details/>
+            }
+          ]
+
           path: "rappels",
           element : <Rappels />,
+
         },
         {
           path: "product",

@@ -3,6 +3,7 @@ import { FaCartShopping } from "react-icons/fa6";
 
 import Button from "./button";
 
+
 export default function ProductCard({
   title,
   description,
@@ -23,6 +24,7 @@ export default function ProductCard({
           <FiBookmark color="green" />
         </div>
       </div>
+
 
       <div className=" flex flex-col">
         <p className=" font-bold">{title}</p>
