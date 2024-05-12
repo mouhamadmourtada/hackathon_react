@@ -12,23 +12,23 @@ const routes = [
     name: 'Dashboard', // name that appear in Sidebar
   },
   {
-    path: '/store',
+    path: '/app/store',
     icon: 'MarketIcon',
     name: 'Store',
   },
   {
-    path: '/product',
+    path: '/app/product',
     icon: 'ProductIcon',
     name: 'Produits',
   },
   {
-    path: '/orders',
+    path: '/app/orders',
     icon: 'OrderIcon',
     name: 'Commandes',
   },
 
   {
-    path: '/todos',
+    path: '/app/panier',
     icon: 'CartIcon',
     name: 'Panier',
   },
