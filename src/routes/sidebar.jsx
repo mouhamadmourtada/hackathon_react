@@ -26,7 +26,11 @@ const routes = [
     icon: 'OrderIcon',
     name: 'Commandes',
   },
-
+  {
+    path: '/app/orders',
+    icon: 'OrderIcon',
+    name: 'Recettes',
+  },
   {
     path: '/app/panier',
     icon: 'CartIcon',

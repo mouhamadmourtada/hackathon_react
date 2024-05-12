@@ -3,6 +3,7 @@ import LambForm from "../components/LambForm";
 import useAxios from "../Hook/useAxios";
 import Loader from "../components/Loader";
 import { useNavigate, Link } from 'react-router-dom';
+// import meta
 
 export default function VendreUnProduit() {
 
@@ -14,7 +15,7 @@ export default function VendreUnProduit() {
   // il nous un autre useAxios pour poster le produit
   
   const {responseAxios: responseAxios2, error: error2, loading: loading2, fetchData: fetchData2 } = useAxios({
-    url : 'http://localhost:8000/api/produitVentes',
+    url : 'http://localhost:8001/api/produitVentes',
     method : "POST",
     // body : null,
     headers : {
@@ -23,7 +24,7 @@ export default function VendreUnProduit() {
   })
   
   const {responseAxios: responseAxios1, error: error1, loading: loading1, fetchData: fetchData1 } = useAxios({
-    url : 'http://localhost:8000/api/produits',
+    url : 'http://localhost:8001/api/produits',
     method : "GET",
     // body : null,
     headers : {
@@ -54,7 +55,7 @@ export default function VendreUnProduit() {
   }
 
   const {responseAxios, error, loading, fetchData } = useAxios({
-    url : 'http://localhost:8000/api/categories',
+    url : 'http://localhost:8001/api/categories',
     method : "GET",
     // body : null,
     headers : {

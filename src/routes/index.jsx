@@ -70,12 +70,12 @@ const Routes = () => {
           element: <div>Edit</div>,
           
         },
-
         {
-
             path: "panier",
             element: <Panier />,
         },
+        
+
         {
           path: "profile",
           element: <div>User Profile</div>,
@@ -85,7 +85,6 @@ const Routes = () => {
           element: <div>LandingPage</div>,
         },
         {
-
           path: "todos",
           element: <><Outlet/></>,
           children: [

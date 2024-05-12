@@ -3,6 +3,7 @@ import BreadCrumb from '../components/BreadCrumb';
 import SearchInput from '../components/SearchInput';
 import MdIcon from '../components/MdIcon';
 import { useState } from 'react';
+import useAxios from '../Hook/useAxios';
 
 
 const links = [
@@ -60,6 +61,8 @@ const products = [
 
 
 const CategoryList = ({setSelectedCategory}) => {
+
+    
 
 
     const categories = [
