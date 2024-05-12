@@ -13,6 +13,8 @@ import { Edit as EditTodo } from "../pages/todo/Edit";
 import { Show as ShowTodo } from "../pages/todo/Show";
 import { Create as CreateTodo } from "../pages/todo/Create";
 import Store from "../pages/Store";
+import Recettes from "../pages/Recettes";
+import GenererRecette from "../pages/GenererRecette";
 
 import LandingPage from "../pages/LandingPage";
 
@@ -52,6 +54,14 @@ const Routes = () => {
         {
           path: "produits/add",
           element: <VendreUnProduit />,
+        },
+        {
+          path: "recette/genererRecette",
+          element: <GenererRecette />,
+        },
+        {
+          path: "recettes",
+          element: <Recettes />,
         },
         {
           path: "dashboard",

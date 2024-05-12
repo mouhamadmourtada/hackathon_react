@@ -63,6 +63,7 @@ const CategoryList = ({ setSelectedCategory }) => {
     { name: "Fruits", image: "/images/fruits.jpg" },
     { name: "Légumes", image: "/images/legumes.jpg" },
     { name: "Charcuterie", image: "/images/viande.jpg" },
+    { name: "Céréales", image: "/images/cereales.jpg" },
     // ... ajoutez plus de catégories selon vos besoins
   ];
 
