@@ -27,7 +27,7 @@ const links = [
 const products = Array.from({ length: 14 }, (v, i) => ({
   id: i + 1,
   name: "Diay ma",
-  image: "/images/banane.jpg",
+  image: "/images/products.jpg",
   price: "680 Fcfa",
 }));
 
@@ -77,7 +77,14 @@ export default function Product() {
             {/* <input class="input h-12 w-full pr-[45px]" type="text" placeholder="Search Here "/> */}
             <SearchInput placeholder="Search product" className="bg-black" />
           </div>
-          <TextButton className="bg-primary text-white">Add Product</TextButton>
+          <TextButton
+            onClick={() => {
+              navigate("/app/produits/add");
+            }}
+            className="bg-primary text-white"
+          >
+            Vendre un produit
+          </TextButton>
           {/* {isDrawerOpen && <Drawer/>} */}
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-4">
@@ -89,9 +96,9 @@ export default function Product() {
                   <div className="relative p-2">
                     <a>
                       <img
-                        className="w-52"
-                        src="/images/banane.jpg"
-                        alt="/images/banane.jpg"
+                        className="w-52 rounded-2xl"
+                        src="/images/products.jpg"
+                        alt="/images/products.jpg"
                       />
                     </a>
                     <div className="absolute top-5 bg-white right-5 z-10">
@@ -145,7 +152,7 @@ export default function Product() {
                       href="#"
                       className="text-lg font-normal text-primary text-hover-primary mb-2 inline-block leading-none"
                     >
-                      {product.name}
+                      {product.libelle}
                     </a>
                     <div className="leading-none mb-2">
                       <span className="text-base font-medium text-black">

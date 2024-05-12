@@ -98,7 +98,8 @@ const Routes = () => {
               element: <Details />,
             },
           ],
-
+        },
+        {
           path: "rappels",
           element: <Rappels />,
         },
